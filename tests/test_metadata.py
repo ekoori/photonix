@@ -23,8 +23,8 @@ def test_location():
     # Conversion from GPS exif data to latitude/longitude
     gps_position = '64 deg 9\' 0.70" N, 21 deg 56\' 3.47" W'
     latitude, longitude = parse_gps_location(gps_position)
-    assert latitude == 64.15011666666668
-    assert longitude == -21.933911666666667
+    assert round(latitude, 9) == 64.150194444
+    assert round(longitude, 9) == -21.934297222
 
 
 def test_datetime():
