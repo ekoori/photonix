@@ -525,7 +525,7 @@ class Query(graphene.ObjectType):
 
     @login_required
     def resolve_task_progress(self, info, **kwargs):
-        """Return No. of remaining and total tasks with there diffrent types."""
+        """Return the number of remaining and total tasks with their different types."""
         return {
             "generate_thumbnails": count_remaining_task('generate_thumbnails'),
             "process_raw": count_remaining_task('process_raw'),
