@@ -188,7 +188,7 @@ class Photo(UUIDModel, VersionedModel):
 
     @property
     def has_photo_files(self):
-        return self.files.all().count() == 0
+        return self.files.exists()
 
     def clear_tags(self, source, type):
         self.photo_tags.filter(tag__source=source, tag__type=type).delete()
