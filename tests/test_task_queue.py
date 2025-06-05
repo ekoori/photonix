@@ -60,7 +60,7 @@ def test_tasks_created_updated(photo_fixture_snow):
     assert (timezone.now() - task.started_at).seconds < 10
     assert (timezone.now() - task.finished_at).seconds < 1
 
-    # Chekc next task has been added to classify images
+    # Check next task has been added to classify images
     task = Task.objects.get(type='classify_images', subject_id=photo_fixture_snow.id)
     assert task.status == 'P'
     assert (timezone.now() - task.created_at).seconds < 1
